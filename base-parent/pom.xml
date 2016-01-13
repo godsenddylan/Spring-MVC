@@ -19,7 +19,7 @@
 			<id>nexus-osc-thirdparty</id>
 			<name>Nexus osc thirdparty</name>
 			<url>http://maven.oschina.net/content/repositories/thirdparty/</url>
-		</repository>
+		</repository> 
 	</repositories>
 
 	<properties>
@@ -39,6 +39,7 @@
 		<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
 		<drools.version>5.5.0.Final</drools.version>
 		<aspectj.version>1.7.1</aspectj.version>
+		<jackson.version>2.5.0</jackson.version>
 	</properties>
 
 	<dependencyManagement>
@@ -82,7 +83,7 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webmvc</artifactId>
 				<version>${spring.version}</version>
-				<exclusions>
+				<exclusions> 
 					<exclusion>
 						<groupId>commons-logging</groupId>
 						<artifactId>commons-logging</artifactId>
