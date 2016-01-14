@@ -5,11 +5,19 @@
 		<groupId>com.dylan.aic</groupId>
 		<artifactId>aic-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>aic-dictionary</artifactId>
 	<name>AIC - Dictionary - 全局数据字典定义</name>
 	<description>定义子项目公用组件</description>
 	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.dylan.base</groupId>
+			<artifactId>base-support</artifactId>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<resources>

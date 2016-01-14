@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.dylan.aic</groupId>
 	<artifactId>aic-parent</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>aic-全局定义</name>
 	<description>定义子项目使用的公用bean、enum等</description>

@@ -19,8 +19,12 @@
 			<id>nexus-osc-thirdparty</id>
 			<name>Nexus osc thirdparty</name>
 			<url>http://maven.oschina.net/content/repositories/thirdparty/</url>
-		</repository> 
+		</repository>
 	</repositories>
+
+	<modules>
+		<module>base-support</module>
+	</modules>
 
 	<properties>
 		<!-- 使用这个变量配置的原因，是因为project.version会被替换为目标pom的版本而不是base本身，所以一定要显式指定 -->
@@ -34,6 +38,7 @@
 		<quartz.version>2.2.2</quartz.version>
 		<slf4j.version>1.7.2</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
+		<log4j2.version>2.0.2</log4j2.version>
 		<jasper.reports.version>5.0.0</jasper.reports.version>
 		<hibernate.core.version>3.6.10.Final</hibernate.core.version>
 		<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
@@ -45,6 +50,13 @@
 	<dependencyManagement>
 		<!-- 这里是所有子项目使用的依赖项的一个全集，用于在这里统一定义版本，子项目里不需要再指定 -->
 		<dependencies>
+			<!-- 支持库版本管理 -->
+			<dependency>
+				<groupId>com.dylan.base</groupId>
+				<artifactId>base-support</artifactId>
+				<version>${base.version}</version>
+			</dependency>
+			
 			<!-- JavaEE接口库 -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
@@ -83,7 +95,7 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webmvc</artifactId>
 				<version>${spring.version}</version>
-				<exclusions> 
+				<exclusions>
 					<exclusion>
 						<groupId>commons-logging</groupId>
 						<artifactId>commons-logging</artifactId>
@@ -235,6 +247,23 @@
 				<artifactId>log4j</artifactId>
 				<version>${log4j.version}</version>
 				<scope>runtime</scope>
+			</dependency>
+
+			<!-- log4j2 -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-web</artifactId>
+				<version>${log4j2.version}</version>
 			</dependency>
 
 			<!-- JasperReports 报表引擎 -->
@@ -592,4 +621,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
