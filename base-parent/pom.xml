@@ -56,7 +56,7 @@
 				<artifactId>base-support</artifactId>
 				<version>${base.version}</version>
 			</dependency>
-			
+
 			<!-- JavaEE接口库 -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
@@ -74,12 +74,8 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-core</artifactId>
 				<version>${spring.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>commons-logging</groupId>
-						<artifactId>commons-logging</artifactId>
-					</exclusion>
-				</exclusions>
+				<!-- <exclusions> <exclusion> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
+					</exclusion> </exclusions> -->
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -95,12 +91,8 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webmvc</artifactId>
 				<version>${spring.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>commons-logging</groupId>
-						<artifactId>commons-logging</artifactId>
-					</exclusion>
-				</exclusions>
+				<!-- <exclusions> <exclusion> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
+					</exclusion> </exclusions> -->
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -307,12 +299,8 @@
 				<groupId>commons-beanutils</groupId>
 				<artifactId>commons-beanutils</artifactId>
 				<version>1.8.3</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>commons-logging</artifactId>
-						<groupId>commons-logging</groupId>
-					</exclusion>
-				</exclusions>
+				<!-- <exclusions> <exclusion> <artifactId>commons-logging</artifactId> 
+					<groupId>commons-logging</groupId> </exclusion> </exclusions> -->
 			</dependency>
 			<dependency>
 				<groupId>commons-dbcp</groupId>
@@ -472,11 +460,13 @@
 				<version>2.4</version>
 			</dependency>
 
-			<!-- mybatis 包 -->
+			<!-- mybatis 包 (mybatis日志交由log4j2管理需要3.2.3以上版本，否则会出现“The setting logImpl 
+				is not known”) -->
+			<!--配置： <settings> <setting name="logImpl" value="LOG4J2" /> </settings> -->
 			<dependency>
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis</artifactId>
-				<version>3.1.1</version>
+				<version>3.2.8</version>
 			</dependency>
 
 			<!--mybatis spring 插件 -->
@@ -532,6 +522,35 @@
 				<artifactId>jedis</artifactId>
 				<version>2.8.0</version>
 			</dependency>
+
+			<!-- memcached 缓存管理策略 (本地仓库安装jar) -->
+			<dependency>
+				<groupId>com.danga</groupId>
+				<artifactId>memcached</artifactId>
+				<version>2.6.6</version>
+			</dependency>
+
+			<!-- druid -数据源 |一个高效、功能强大、可扩展性好的数据库连接池 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>1.0.16</version>
+			</dependency>
+
+			<!-- emayclient 短信 (本地仓库安装jar) -->
+			<dependency>
+				<groupId>cn.emay</groupId>
+				<artifactId>emayclient</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			
+			<!-- url重写 -->
+			<dependency>
+				<groupId>org.tuckey</groupId>
+				<artifactId>urlrewritefilter</artifactId>
+				<version>4.0.4</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
